@@ -664,9 +664,8 @@ void adventurerEffect(struct gameState* state, int* temphand)
       drawntreasure++;
     else
     {
-      temphand[z]=cardDrawn;
+      temphand[++z]=cardDrawn;
       state->handCount[currentPlayer]--; //this should just remove the top card (the most recently drawn one).
-      z++;
     }
   }
 
@@ -690,7 +689,7 @@ void smithyEffect(int handPos, struct gameState *state)
   }
 
   //discard card from hand
-  discardCard(handPos, currentPlayer, state, 0);
+  discardCard(handPos, currentPlayer, state, 1);
 }
 
 
@@ -710,10 +709,12 @@ void councilroomEffect(struct gameState* state, int handPos)
   //Each other player draws a card
   for (int i = 0; i < state->numPlayers; i++)
   {
-    if ( i != currentPlayer )
+    if ( i == currentPlayer )
     {
-      drawCard(i, state);
+      i++;
+      continue;
     }
+    drawCard(i, state);
   }
 
   //put played card in played card pile
@@ -794,12 +795,12 @@ int mineEffect(struct gameState* state, int choice1, int choice2, int handPos)
 
   if (choice2 > treasure_map || choice2 < curse)
   {
-    return -1;
+    return -2;
   }
 
   if ( (getCost(state->hand[currentPlayer][choice1]) + 3) > getCost(choice2) )
   {
-    return -1;
+    return -3;
   }
 
   gainCard(choice2, state, 2, currentPlayer);
