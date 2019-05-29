@@ -1,5 +1,5 @@
 File 'dominion.c'
-Lines executed:47.48% of 556
+Lines executed:18.36% of 561
 Creating 'dominion.c.gcov'
 
 
@@ -27,7 +27,7 @@ Test 4: PASS
 Outpost Card Function: Failed 2 Tests
 
 File 'dominion.c'
-Lines executed:48.02% of 556
+Lines executed:20.86% of 561
 Creating 'dominion.c.gcov'
 
 
@@ -60,7 +60,7 @@ Test 6: PASS
 Salvager Card Function: All Tests Passed!
 
 File 'dominion.c'
-Lines executed:49.64% of 556
+Lines executed:23.71% of 561
 Creating 'dominion.c.gcov'
 
 
@@ -93,21 +93,21 @@ Test 5: PASS
 Village Card Function: Failed 2 Tests
 
 File 'dominion.c'
-Lines executed:49.64% of 556
+Lines executed:24.60% of 561
 Creating 'dominion.c.gcov'
 
 
 *********** Testing Play Adventurer Card (Boundary) ***********
 
 Test 1: +2 cards in hand for each player
-Expected player 1 hand count: 7, Actual player 1 hand count: 9
-Expected player 2 hand count: 2, Actual player 2 hand count: 5
+Expected player 1 hand count: 7, Actual player 1 hand count: 6
+Expected player 2 hand count: 2, Actual player 2 hand count: 1
 
 Test 1: FAIL
 
 Test 2: +2 treasure cards in hand for each player
-Expected player 1 treasure count: 6, Actual player 1 treasure count: 6
-Expected player 2 treasure count: 2, Actual player 2 treasure count: 4
+Expected player 1 treasure count: 6, Actual player 1 treasure count: 5
+Expected player 2 treasure count: 2, Actual player 2 treasure count: 1
 
 Test 2: FAIL
 
@@ -117,7 +117,7 @@ Test 3: PASS
 Adventurer Card Function (Boundary): Failed 2 Tests
 
 File 'dominion.c'
-Lines executed:50.00% of 556
+Lines executed:26.20% of 561
 Creating 'dominion.c.gcov'
 
 
@@ -129,20 +129,21 @@ Expected player 2 hand count: 2, Actual player 2 hand count: 3
 Test 1: FAIL
 
 Test 2: -3 cards in deck after both players play card
-Expected player 1 deck count: 2, Actual player 1 deck count: 1
-Expected player 2 deck count: 7, Actual player 2 deck count: 6
-Test 2: FAIL
+Expected player 1 deck count: 2, Actual player 1 deck count: 2
+Expected player 2 deck count: 7, Actual player 2 deck count: 7
+
+Test 2: PASS
 
 Test 3: new cards in hand should be from each player's deck
 Test 3: FAIL
 
 Test 4: State not otherwise adjusted
-Test 4: FAIL
+Test 4: PASS
 
-Smithy Card Function: Failed 4 Tests
+Smithy Card Function: Failed 2 Tests
 
 File 'dominion.c'
-Lines executed:50.00% of 556
+Lines executed:27.27% of 561
 Creating 'dominion.c.gcov'
 
 
@@ -168,7 +169,7 @@ Test 4: PASS
 Council Room Card Function: All Tests Passed!
 
 File 'dominion.c'
-Lines executed:50.00% of 556
+Lines executed:29.06% of 561
 Creating 'dominion.c.gcov'
 
 
@@ -189,6 +190,6 @@ Test 3: PASS
 Great Hall Card Function: All Tests Passed!
 
 File 'dominion.c'
-Lines executed:50.72% of 556
+Lines executed:29.77% of 561
 Creating 'dominion.c.gcov'
 

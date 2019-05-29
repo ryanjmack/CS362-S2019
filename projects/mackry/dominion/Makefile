@@ -18,6 +18,9 @@ badTestDrawCard: badTestDrawCard.c dominion.o rngs.o
 testBuyCard: testDrawCard.c dominion.o rngs.o
 	gcc -o testDrawCard -g  testDrawCard.c dominion.o rngs.o $(CFLAGS)
 
+
+
+#### Unit test makefile commands
 testAll: dominion.o testSuite.c
 	gcc -o testSuite testSuite.c -g  dominion.o rngs.o $(CFLAGS)
 
@@ -48,6 +51,25 @@ testGreatHall: cardtest4.c dominion.o rngs.o
 interface.o: interface.h interface.c
 	gcc -c interface.c -g  $(CFLAGS)
 
+
+
+#### Random tests makefile commands
+randomtestresults: randomTestAdventurer randomTestCard1 randomTestCard2
+	./randomTestAdventurer &> randomtestresults.out
+	./randomTestCard1 >> randomtestresults.out
+	./randomTestCard2 >> randomtestresults.out
+	gcov -fb dominion.c >> randomtestresults.out
+
+randomTestAdventurer: randomtestadventurer.c dominion.o rngs.o
+	gcc -o randomTestAdventurer -g randomtestadventurer.c dominion.o rngs.o $(CFLAGS)
+
+randomTestCard1: randomtestcard1.c dominion.o rngs.o
+	gcc -o randomTestCard1 -g randomtestcard1.c dominion.o rngs.o $(CFLAGS)
+
+randomTestCard2: randomtestcard2.c dominion.o rngs.o
+	gcc -o randomTestCard2 -g randomtestcard2.c dominion.o rngs.o $(CFLAGS)
+
+
 runtests: testDrawCard
 	./testDrawCard &> unittestresult.out
 	gcov dominion.c >> unittestresult.out
@@ -74,7 +96,7 @@ unittestresults: testPlayAdventurer testPlayOutpost testPlaySalvager testPlayVil
 player: player.c interface.o
 	gcc -o player player.c -g  dominion.o rngs.o interface.o $(CFLAGS)
 
-all: playdom player testPlayAdventurer testPlayOutpost testPlaySalvager testPlayVillage testAdventurer testSmithy testCouncilRoom testGreatHall
+all: playdom player testPlayAdventurer testPlayOutpost testPlaySalvager testPlayVillage testAdventurer testSmithy testCouncilRoom testGreatHall playdom player randomTestAdventurer randomTestCard1 randomTestCard2
 
 clean:
-	rm -f *.o playdom.exe playdom player player.exe testPlayAdventurer testPlayOutpost testPlaySalvager testPlayVillage testAdventurer testSmithy testCouncilRoom testGreatHall *.gcov *.gcda *.gcno *.so *.out testDrawCard testDrawCard.exe
+	rm -f *.o playdom.exe playdom player player.exe testPlayAdventurer testPlayOutpost testPlaySalvager testPlayVillage testAdventurer testSmithy testCouncilRoom testGreatHall *.gcov *.gcda *.gcno *.so testDrawCard testDrawCard.exe
