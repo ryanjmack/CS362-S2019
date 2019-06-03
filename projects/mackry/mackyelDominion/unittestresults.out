@@ -1,0 +1,195 @@
+File 'dominion.c'
+Lines executed:18.36% of 561
+Creating 'dominion.c.gcov'
+
+
+*********** Testing Outpost Card Function ***********
+
+Test 1: +1 outpostPlayed after player 1 plays card
+Expected state.outpostPlayed: 1, Actual state.outpostPlayed: 0
+
+Test 1: FAIL
+
+Test 2: +2 outpostPlayed after both players play card
+Expected state.outpostPlayed: 2, Actual state.outpostPlayed: 0
+
+Test 2: FAIL
+
+Test 3: State not otherwise adjusted
+Test 3: PASS
+
+Test 4: -1 card in each player's hand after playing Outpost card
+Expected hand count for player 1: 4, Actual hand count for player 1: 4
+Expected hand count for player 2: -1, Actual hand count for player 2: -1
+
+Test 4: PASS
+
+Outpost Card Function: Failed 2 Tests
+
+File 'dominion.c'
+Lines executed:20.86% of 561
+Creating 'dominion.c.gcov'
+
+
+*********** Testing Salvager Card Function ***********
+
+Test 1: +1 numBuys after player 1 plays card
+Expected pass number: 20, Actual pass number: 20
+Test 1: PASS
+
+Test 2: Coins increment by cost of chosen card
+Expected pass number: 20, Actual pass number: 20
+Test 2: PASS
+
+Test 3: -2 in hand after player 1 plays card
+Expected pass number: 20, Actual pass number: 20
+Test 3: PASS
+
+Test 4: State not otherwise adjusted
+Expected pass number: 20, Actual pass number: 20
+Test 4: PASS
+
+Test 5: Hand no longer has chosen coin card
+Expected pass number: 20, Actual pass number: 20
+Test 5: PASS
+
+Test 6: Hand no longer has played card
+Expected pass number: 20, Actual pass number: 20
+Test 6: PASS
+
+Salvager Card Function: All Tests Passed!
+
+File 'dominion.c'
+Lines executed:23.71% of 561
+Creating 'dominion.c.gcov'
+
+
+*********** Testing Village Card Function ***********
+
+Test 1: +2 numActions after player 1 plays card
+Expected state.numActions: 3, Actual state.numActions: 4
+
+Test 1: FAIL
+
+Test 2: +2 numActions after both players play card
+Expected state.numActions: 5, Actual state.numActions: 7
+
+Test 2: FAIL
+
+Test 3: State not otherwise adjusted
+Test 3: PASS
+
+Test 4: -1 card in each player's deck after playing Village card
+Expected deck count for player 1: 4, Actual deck count for player 1: 4
+Expected deck count for player 2: 9, Actual deck count for player 2: 9
+Test 4: PASS
+
+Test 5: -1 card in each player's hand after playing Village card (including drawn card)
+Expected hand count for player 1: 5, Actual hand count for player 1: 5
+Expected hand count for player 2: 0, Actual hand count for player 2: 0
+
+Test 5: PASS
+
+Village Card Function: Failed 2 Tests
+
+File 'dominion.c'
+Lines executed:24.60% of 561
+Creating 'dominion.c.gcov'
+
+
+*********** Testing Play Adventurer Card (Boundary) ***********
+
+Test 1: +2 cards in hand for each player
+Expected player 1 hand count: 7, Actual player 1 hand count: 6
+Expected player 2 hand count: 2, Actual player 2 hand count: 1
+
+Test 1: FAIL
+
+Test 2: +2 treasure cards in hand for each player
+Expected player 1 treasure count: 6, Actual player 1 treasure count: 5
+Expected player 2 treasure count: 2, Actual player 2 treasure count: 1
+
+Test 2: FAIL
+
+Test 3: All cards in deck before treasure cards now in discard pile
+Test 3: PASS
+
+Adventurer Card Function (Boundary): Failed 2 Tests
+
+File 'dominion.c'
+Lines executed:26.20% of 561
+Creating 'dominion.c.gcov'
+
+
+*********** Testing Play Smithy Card ***********
+
+Test 1: +2 cards in hand after both players play card
+Expected player 1 hand count: 7, Actual player 1 hand count: 8
+Expected player 2 hand count: 2, Actual player 2 hand count: 3
+Test 1: FAIL
+
+Test 2: -3 cards in deck after both players play card
+Expected player 1 deck count: 2, Actual player 1 deck count: 2
+Expected player 2 deck count: 7, Actual player 2 deck count: 7
+
+Test 2: PASS
+
+Test 3: new cards in hand should be from each player's deck
+Test 3: FAIL
+
+Test 4: State not otherwise adjusted
+Test 4: PASS
+
+Smithy Card Function: Failed 2 Tests
+
+File 'dominion.c'
+Lines executed:27.27% of 561
+Creating 'dominion.c.gcov'
+
+
+*********** Testing Play Council Room Card ***********
+
+Test 1: +4 -1 discard cards in player 1's hand, +1 card in player 2's hand after player 1 plays
+Expected player 1 hand count: 8, Actual player 1 hand count: 8
+Expected player 2 hand count: 1, Actual player 2 hand count: 1
+Test 1: PASS
+
+Test 2: +4 -1 discard cards in player 2's hand, +1 card in player 1's hand after player 2 plays
+Expected player 2 hand count: 4, Actual player 2 hand count: 4
+Expected player 1 hand count: 9, Actual player 1 hand count: 9
+Test 2: PASS
+
+Test 3: +1 numBuys for each player after play
+Expected state.numBuys: 3, Actual state.numBuys: 3
+Test 3: PASS
+
+Test 4: State not otherwise adjusted
+Test 4: PASS
+
+Council Room Card Function: All Tests Passed!
+
+File 'dominion.c'
+Lines executed:29.06% of 561
+Creating 'dominion.c.gcov'
+
+
+*********** Testing Play Great Hall Card ***********
+
+Test 1: Each player should have same number of cards in hand after play
+Expected player 1 handCount: 5, Actual player 1 handCount: 5
+Expected player 2 handCount: 0, Actual player 2 handCount: 0
+Test 1: PASS
+
+Test 2: +1 numActions for each player after play
+Expected state.numActions: 3, Actual state.numActions: 3
+Test 2: PASS
+
+Test 3: State not otherwise adjusted
+Test 3: PASS
+
+Great Hall Card Function: All Tests Passed!
+
+File 'dominion.c'
+Lines executed:29.77% of 561
+Creating 'dominion.c.gcov'
+
